@@ -44,12 +44,14 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+              @if (Auth::user()->hak_akses == "Pemilik")
               <li class="nav-item">
                 <a href="{{ route('user.index') }}" class="nav-link {{ Request::is('user*') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data User</p>
                 </a>
               </li>
+              @endif
               <li class="nav-item">
                 <a href="{{ route('stok.index') }}" class="nav-link {{ Request::is('stok*') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
@@ -64,6 +66,7 @@
               </li>
             </ul>
           </li>
+          @if (Auth::user()->hak_akses == "Pemilik")
           <li class="nav-item @if (Request::is('peramalan*') || Request::is('prediksi-stok*'))
                     menu-open
                 @endif">
@@ -91,6 +94,7 @@
               </li>
             </ul>
           </li>
+          @endif
           <li class="nav-item @if (Request::is('laporanPenjualan*') || Request::is('laporanStok*'))
                 menu-open
             @endif">

@@ -37,12 +37,14 @@
                         <button type="submit" class="btn btn-outline-primary">Filter</button>
                     </div>
                 </form>
+                @if (Auth::user()->hak_akses == "Pemilik")
                 <div class="text-right col-md-6">
                     <form action="{{ route('printPenjualan') }}">
                         <input type="hidden" name="tahunDipilih" value="{{ $tahunDipilih }}">
                         <button type="submit" class="btn btn-outline-success">Cetak Laporan</button>
                     </form>
                 </div>
+                @endif
             </div>
 
           <table id="laporanPenjualans" class="table table-bordered table-hover table-sm">

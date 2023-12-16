@@ -23,11 +23,13 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-          <div class="row mb-3">
-            <div class="col-md text-right">
-              <a href="{{ route('stok.create') }}" class="btn btn-outline-primary">Tambah Stok</a>
-            </div>
+        @if (Auth::user()->hak_akses == "Pegawai")
+        <div class="row mb-3">
+          <div class="col-md text-right">
+            <a href="{{ route('stok.create') }}" class="btn btn-outline-primary">Tambah Stok</a>
           </div>
+        </div>
+        @endif
           <table id="dataStoks" class="table table-bordered table-hover table-sm">
             <thead>
             <tr>
@@ -35,7 +37,9 @@
               <th>Nama Barang</th>
               <th>Jumlah Stok</th>
               <th>Pegawai</th>
+              @if (Auth::user()->hak_akses == "Pegawai")
               <th>Aksi</th>
+              @endif
             </tr>
             </thead>
             <tbody>
@@ -45,7 +49,9 @@
                 <td>{{ $dataStok->nama_barang }}</td>
                 <td>{{ $dataStok->jumlah_stok }}</td>
                 <td>{{ $dataStok->user->name }}</td>
+                @if (Auth::user()->hak_akses == "Pegawai")
                 <td><a href="{{ route('stok.edit', $dataStok->id) }}" style="color: gray"><i class="fa-solid fa-pencil"></i></a></td>
+                @endif
               </tr>
             @endforeach
             </tbody>
