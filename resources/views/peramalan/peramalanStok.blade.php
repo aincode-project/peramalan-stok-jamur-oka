@@ -59,9 +59,13 @@
                   </div>
                   <!-- /.col -->
                 </div>
-              </form>
-            </div>
+            </form>
             <!-- /.form-box -->
+            @if ($id != 0)
+            <hr>
+            <h5>Pehitungan Hasil Peramalan</h5>
+            <p>Berdasarkan Nilai a = {{ $dataPeramalan->nilai_a }}, Nilai b = {{ $dataPeramalan->nilai_b }}. Nilai jumlah penjualan yaitu {{ $jumlah_penjualan }}, maka: <br> Y({{ $jumlah_penjualan }}) = 193.06 + 0.8382 ({{ $jumlah_penjualan }}) = {{ $hasil_prediksi }}</p>
+            @endif
         </div>
         <!-- /.card-body -->
       </div>

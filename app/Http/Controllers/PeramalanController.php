@@ -172,7 +172,7 @@ class PeramalanController extends Controller
             // $hasil_prediksi = intval($dataPeramalan->nilai_a + ($dataPeramalan->nilai_b * $jumlah_penjualan));
             $hasil_prediksi = $dataPeramalan->nilai_a + ($dataPeramalan->nilai_b * $jumlah_penjualan);
 
-            return view('peramalan.peramalanStok', compact('id', 'jumlah_penjualan', 'hasil_prediksi'));
+            return view('peramalan.peramalanStok', compact('id', 'jumlah_penjualan', 'hasil_prediksi', 'dataPeramalan'));
         }
 
     }

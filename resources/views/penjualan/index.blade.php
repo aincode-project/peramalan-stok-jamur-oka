@@ -35,7 +35,7 @@
             <tr>
               <th>Tanggal</th>
               <th>Nama Barang</th>
-              <th>Jumlah Stok</th>
+              <th>Jumlah Terjual</th>
               <th>Pegawai</th>
               @if (Auth::user()->hak_akses == "Pegawai")
               <th>Aksi</th>
