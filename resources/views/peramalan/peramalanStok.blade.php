@@ -64,7 +64,7 @@
             @if ($id != 0)
             <hr>
             <h5>Pehitungan Hasil Peramalan</h5>
-            <p>Berdasarkan Nilai a = {{ $dataPeramalan->nilai_a }}, Nilai b = {{ $dataPeramalan->nilai_b }}. Nilai jumlah penjualan yaitu {{ $jumlah_penjualan }}, maka: <br> Y({{ $jumlah_penjualan }}) = 193.06 + 0.8382 ({{ $jumlah_penjualan }}) = {{ $hasil_prediksi }}</p>
+            <p>Berdasarkan Nilai a = {{ $dataPeramalan->nilai_a }}, Nilai b = {{ $dataPeramalan->nilai_b }}. Nilai jumlah penjualan yaitu {{ $jumlah_penjualan }}, maka: <br> Y({{ $jumlah_penjualan }}) = {{ $dataPeramalan->nilai_a }} + {{ $dataPeramalan->nilai_b }} ({{ $jumlah_penjualan }}) = {{ $hasil_prediksi }}</p>
             @endif
         </div>
         <!-- /.card-body -->
